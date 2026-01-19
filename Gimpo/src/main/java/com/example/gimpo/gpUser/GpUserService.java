@@ -7,5 +7,5 @@ import lombok.RequiredArgsConstructor;
 @Service
 @RequiredArgsConstructor
 public class GpUserService {
-	private final GpUserRepository citizenRepository;
+	private final GpUserRepository gpUserRepository;
 }
