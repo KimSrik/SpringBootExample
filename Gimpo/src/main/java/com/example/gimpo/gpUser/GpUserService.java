@@ -1,4 +1,4 @@
-package com.example.gimpo.citizen;
+package com.example.gimpo.gpUser;
 
 import org.springframework.stereotype.Service;
 
@@ -6,6 +6,6 @@ import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class CitizenService {
-	private final CitizenRepository citizenRepository;
+public class GpUserService {
+	private final GpUserRepository citizenRepository;
 }

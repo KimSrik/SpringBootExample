@@ -1,7 +1,7 @@
-package com.example.gimpo.citizen;
+package com.example.gimpo.gpUser;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CitizenRepository extends JpaRepository<Citizen, Long> {
+public interface GpUserRepository extends JpaRepository<GpUser, Long> {
 
 }

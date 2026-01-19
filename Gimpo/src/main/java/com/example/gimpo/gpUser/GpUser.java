@@ -1,4 +1,4 @@
-package com.example.gimpo.citizen;
+package com.example.gimpo.gpUser;
 
 import groovy.transform.Generated;
 import jakarta.persistence.Column;
@@ -12,7 +12,7 @@ import lombok.Setter;
 @Setter
 @Getter
 @Entity
-public class Citizen {
+public class GpUser {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
