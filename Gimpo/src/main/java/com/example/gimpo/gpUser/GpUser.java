@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -23,6 +24,7 @@ public class GpUser {
 	
 	private String password;
 	
+	@NotEmpty(message = "이름 입력란이 잘못되었습니다.")
 	private String username;
 	
 	@Column(unique = true)

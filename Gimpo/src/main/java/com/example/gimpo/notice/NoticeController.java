@@ -32,4 +32,8 @@ public class NoticeController {
 		model.addAttribute("notice", notice);
 		return "notice_detail";
 	}
+	
+	// 공지 작성 하기
+	
+	
 }
