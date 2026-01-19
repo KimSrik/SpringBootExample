@@ -8,7 +8,6 @@ public class MainController {
 	
 	@GetMapping("/")
 	public String root() {
-		return "/notice_list";
-		//return "redirect:/notice_list";
+		return "redirect:/notice/list";
 	}
 }

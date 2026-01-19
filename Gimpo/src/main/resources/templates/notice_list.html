@@ -3,3 +3,29 @@
 <h3>알림 사항 목록</h3>
 <h4><span>검색</span>  <span>검색단어 입력</span></h4>
 <h5>게시판 목록 시작</h5>
+<table class="table">
+	<thead class="table-dark">
+		<tr class="text-center">
+			<th>번호</th>
+			<th style="width:50%">제목</th>
+			<th>작성자</th>
+			<th>조회수</th>
+			<th>작성일</th>			
+		</tr>
+	</thead>
+	
+	<tbody class="text-center">
+		<tr th:each="notice, loop : ${lists}">
+			<td th:text="${loop.count}"></td>
+			<td>
+				<a th:href="@{|/notice/detail/${notice.id}|}">
+					<span th:text="${notice.title}"></span>
+				</a>
+			</td>
+<!-- 			<td th:text="${notice.writter}"></td> -->
+			<td th:text="김아무개"></td>
+			<td th:text="${notice.views}"></td>
+			<td th:text="${ #temporals.format(notice.createDate, 'yyyy-MM-dd hh:mm:ss') }"></td>			
+		</tr>
+	</tbody>
+</table>
