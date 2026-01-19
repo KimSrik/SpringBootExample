@@ -1,0 +1,70 @@
+<h1>김포시청</h1>
+<h2>통하는 70도시 우리 김포</h2>
+<h3>알림 사항 목록</h3>
+<h4><span>검색</span>  <span>검색단어 입력</span></h4>
+<h5>게시판 상세 보기 시작</h5>
+
+<hr>
+
+<div>
+	<span>제목</span>
+	<span th:text="${notice.title}"></span>
+</div>
+
+<div>
+	<span>작성자</span>
+	<span>김 아 무 개</span>
+	<!-- <span th:text="${notice.writter}"></span> -->
+</div>
+
+
+<div>내용</div>
+<textarea th:text="${notice.content}" rows="15"></textarea>
+
+<div>
+	<span>조회수</span>
+	<span th:text="${notice.views}"></span>
+</div>
+
+<div>
+	<span>작성일</span>
+	<span th:text="${ #temporals.format(notice.createDate, 'yyyy-MM-dd HH:mm:ss') }"></span>
+</div>
+
+<hr>
+
+<div>
+	<span>이전글</span>
+	<span>:: 이전글 링크</span>
+</div>
+
+<div>
+	<span>다음글</span>
+	<span>:: 다음글 링크</span>
+</div>
+
+<hr>
+
+<div>
+	<span>작성자</span>
+	<span>김 아 무 개</span>
+	<!-- <span th:text="${notice.writter}"></span> -->
+	
+	<span>최종수정일</span>
+	<span th:text="${ #temporals.format(notice.modifyDate, 'yyyy-MM-dd HH:mm:ss') }"></span>
+</div>
+
+<div>지금 보고계시는 화면의 정보와 사용편의성에 만족하십니까?</div>
+<div>
+	<span>
+		<input type="radio" name="rating" value="5"/> 매우 만족 &nbsp;  
+		<input type="radio" name="rating" value="5"/> 만족 &nbsp;
+		<input type="radio" name="rating" value="5"/> 보통 &nbsp;
+		<input type="radio" name="rating" value="5"/> 불만족 &nbsp;
+		<input type="radio" name="rating" value="5"/> 매우 불만족 &nbsp;
+	</span>
+</div>
+<div>
+	<input type="text" name="oContent" id="oContent" placeholder="100자 이내로 적어주세요.">
+	<button>의견 남기기</button>
+</div>
