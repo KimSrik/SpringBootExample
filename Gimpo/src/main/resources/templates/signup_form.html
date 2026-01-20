@@ -1,7 +1,43 @@
 <html layout:decorate="~{layout}">
 	<div layout:fragment="content" class="container my-3">
-		<div>
-		
+		<div class="center">
+			<h1>회원가입</h1>
 		</div>	
+		
+		<hr>
+		
+		<div class="my-3">
+			<form th:action="@{/user/signup}" method="post" th:object="${gpUserForm}">
+			
+				<div class="mb-3">
+					<label for="username" class="form-label">사용자ID</label>
+					<input type="text" class="form-control" th:field="*{username}" />
+				</div>
+				
+				<div class="mb-3">
+					<label for="password1" class="form-label">비밀번호</label>
+					<input type="password" class="form-control" th:field="*{password1}" />
+				</div>
+				
+				<div class="mb-3">
+					<label for="password2" class="form-label">비밀번호 재확인</label>
+					<input type="password" class="form-control" th:field="*{password2}" />	
+				</div>
+				
+				<div class="mb-3">
+					<label for="name" class="form-label">이름</label>
+					<input type="text" class="form-control" th:field="*{name}" />
+				</div>
+				
+				<div class="mb-3">
+					<label for="email" class="form-label">이메일</label>
+					<input type="email" class="form-control" th:field="*{email}" />
+				</div>
+				
+				<button type="submit" class="btn btn-primary my-3">회원가입</button>
+				
+						
+			</form>
+		</div>
 	</div>
 </html>

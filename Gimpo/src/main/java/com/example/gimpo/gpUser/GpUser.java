@@ -1,6 +1,5 @@
 package com.example.gimpo.gpUser;
 
-import groovy.transform.Generated;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,12 +19,12 @@ public class GpUser {
 	private Long id;
 	
 	@Column(unique = true)
-	private String userId;
+	private String username;
 	
 	private String password;
 	
 	@NotEmpty(message = "이름 입력란이 잘못되었습니다.")
-	private String username;
+	private String name;
 	
 	@Column(unique = true)
 	private String email;

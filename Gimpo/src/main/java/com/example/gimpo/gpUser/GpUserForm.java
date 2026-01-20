@@ -12,7 +12,7 @@ public class GpUserForm {
 	
 	@Size(min=4, max=20)
 	@NotEmpty(message = "사용자 ID는 필수 항목입니다.")
-	private String userId;
+	private String username;
 	
 	@NotEmpty(message = "비밀번호는 필수 항목입니다.")
 	private String password1;
@@ -21,7 +21,7 @@ public class GpUserForm {
 	private String password2;
 	
 	@NotEmpty(message = "이름 입력란이 잘못되었습니다.")
-	private String username;
+	private String name;
 	
 	@Email
 	@NotEmpty(message = "이메일은 필수 항목입니다.")
