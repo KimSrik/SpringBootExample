@@ -7,15 +7,17 @@
 <!-- bootstrap.css added -->
 <link rel="stylesheet" type="text/css" th:href="@{/bootstrap.min.css}">
 
-
-</head>
-<body>
-	
 	<!-- copy page notication -->
 	<div>
 		<img src="/img/header_flag.png">
 		<span style="vertical-align:middle;">이 누리집은 공식 누리집이 아닌 교육용 카피 페이지 입니다.</span>
 	</div>
+
+
+</head>
+<body>
+	
+	
 
 	<!-- navbar added -->
 	<div th:replace="~{navbar::navbarFragment}"></div>
@@ -25,7 +27,9 @@
 
 	<!-- bootstrap JS added -->
 	<script th:src="@{/bootstrap.min.js}"></script>
-
+	
+	<!-- custom Java script added -->
+	<th:block layout:fragment="script"></th:block>
 
 </body>
 </html>

@@ -21,19 +21,7 @@ public class GpUserController {
 	public String signup(GpUserForm gpUserForm) {
 		return "signup_form";
 	}
-	
-	@PostMapping("/signup")
-	public String signup1(GpUserForm gpUserForm) {
-		try {
-			gpUserService.create(gpUserForm.getUsername(), gpUserForm.getPassword1(), gpUserForm.getName(), gpUserForm.getEmail());
-		} catch (Exception e) {
-			e.printStackTrace();
-			return "signup_form";
-		}
-		return "redirect:/";
-	}
 
-	/*
 	@PostMapping("/signup")
 	public String signup(@Valid GpUserForm gpUserForm, BindingResult bindingResult) {
 		if(bindingResult.hasErrors()) {
@@ -46,7 +34,7 @@ public class GpUserController {
 		}
 		
 		try {
-			gpUserService.create(gpUserForm.getUserId(), gpUserForm.getPassword1(), gpUserForm.getEmail());
+			gpUserService.create(gpUserForm.getUsername(), gpUserForm.getPassword1(), gpUserForm.getName(), gpUserForm.getEmail());
 		} catch (DataIntegrityViolationException e) {
 			e.printStackTrace();			
 			bindingResult.reject("signupFailed", "이미 등록된 사용자입니다.");
@@ -59,7 +47,7 @@ public class GpUserController {
 		
 		return "redirect:/";
 		
-	}*/
+	}
 	
 	
 	@GetMapping("/login")

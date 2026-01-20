@@ -9,6 +9,7 @@
 				<div class="card-body">	
 					<form th:object="${noticeForm}" method="post">
 					<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+					<div th:replace="~{form_errors :: formErrorsFragment}"></div>
 					
 						<table class="table">
 							<tr>
