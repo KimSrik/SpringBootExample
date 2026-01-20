@@ -1,66 +1,87 @@
 <html layout:decorate="~{layout}">
 	<div layout:fragment="content">
-		<div>
-			<span>제목</span>
-			<span th:text="${notice.title}"></span>
-		</div>
+		<div class="container my-3">
 		
-		<div>
-			<span>작성자</span>
-			<span>김 아 무 개</span>
-			<!-- <span th:text="${notice.writter}"></span> -->
-		</div>
+			<div class="my-3 py-3">
+					<h2>알림사항 상세보기</h2>
+			</div>
 		
-		
-		<div>내용</div>
-		<textarea th:text="${notice.content}" rows="15"></textarea>
-		
-		<div>
-			<span>조회수</span>
-			<span th:text="${notice.views}"></span>
-		</div>
-		
-		<div>
-			<span>작성일</span>
-			<span th:text="${ #temporals.format(notice.createDate, 'yyyy-MM-dd HH:mm:ss') }"></span>
-		</div>
-		
-		<hr>
-		
-		<div>
-			<span>이전글</span>
-			<span>:: 이전글 링크</span>
-		</div>
-		
-		<div>
-			<span>다음글</span>
-			<span>:: 다음글 링크</span>
-		</div>
-		
-		<hr>
-		
-		<div>
-			<span>작성자</span>
-			<span>김 아 무 개</span>
-			<!-- <span th:text="${notice.writter}"></span> -->
+			<div class="card my-3">		
+				<div class="card-body">	
+					<table class="table">
+						<tr>
+							<td class="table-info" style="padding-left:3%">제목</td>
+							<td th:text="${notice.title}"></td>
+						</tr>
+						
+						<tr>
+							<td class="table-info" style="padding-left:3%">작성자</td>
+							<td th:text="${notice.writter.username}"></td>
+						</tr>
+						
+						<tr>
+							<td colspan="2">
+								<textarea sec:authorize="isAnonymous" class="form-control bg-white" th:text="${notice.content}" rows="15" readonly></textarea>						
+								
+								<textarea sec:authorize="isAuthenticated()" class="form-control bg-white" th:text="${notice.content}" rows="15"></textarea>
+							</td>
+						</tr>
+						
+						<tr>
+							<td class="table-info" style="padding-left:3%">조회수</td>
+							<td th:text="${notice.views}"></td>
+						</tr>
+						
+						<tr>
+							<td class="table-info" style="padding-left:3%">작성일</td>
+							<td th:text="${ #temporals.format(notice.createDate, 'yyyy-MM-dd HH:mm:ss') }"></td>
+						</tr>
+						
+						
+					</table>
+					
+					<div class="d-flex justify-content-end">
+						<a class="btn btn-primary" th:href="@{/notice/list}">목록</a>
+					</div>
 			
-			<span>최종수정일</span>
-			<span th:text="${ #temporals.format(notice.modifyDate, 'yyyy-MM-dd HH:mm:ss') }"></span>
-		</div>
-		
-		<div>지금 보고계시는 화면의 정보와 사용편의성에 만족하십니까?</div>
-		<div>
-			<span>
-				<input type="radio" name="rating" value="5"/> 매우 만족 &nbsp;  
-				<input type="radio" name="rating" value="5"/> 만족 &nbsp;
-				<input type="radio" name="rating" value="5"/> 보통 &nbsp;
-				<input type="radio" name="rating" value="5"/> 불만족 &nbsp;
-				<input type="radio" name="rating" value="5"/> 매우 불만족 &nbsp;
-			</span>
-		</div>
-		<div>
-			<input type="text" name="oContent" id="oContent" placeholder="100자 이내로 적어주세요.">
-			<button>의견 남기기</button>
+					<hr>
+					
+					<div>
+						<span>이전글</span>
+						<span>:: 이전글 링크</span>
+					</div>
+					
+					<div>
+						<span>다음글</span>
+						<span>:: 다음글 링크</span>
+					</div>
+					
+					<hr>
+					
+					<div>
+						<span>작성자</span>
+						<span th:text="${notice.writter.username}"></span>
+						
+						<span>&nbsp;&nbsp;&nbsp; 최종수정일</span>
+						<span th:text="${ #temporals.format(notice.modifyDate, 'yyyy-MM-dd HH:mm:ss') }"></span>
+					</div>
+					
+					<div>지금 보고계시는 화면의 정보와 사용편의성에 만족하십니까?</div>
+					<div>
+						<span>
+							<input type="radio" name="rating" value="5"/> 매우 만족 &nbsp;  
+							<input type="radio" name="rating" value="5"/> 만족 &nbsp;
+							<input type="radio" name="rating" value="5"/> 보통 &nbsp;
+							<input type="radio" name="rating" value="5"/> 불만족 &nbsp;
+							<input type="radio" name="rating" value="5"/> 매우 불만족 &nbsp;
+						</span>
+					</div>
+					<div>
+						<input type="text" name="oContent" id="oContent" placeholder="100자 이내로 적어주세요.">
+						<button>의견 남기기</button>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </html>

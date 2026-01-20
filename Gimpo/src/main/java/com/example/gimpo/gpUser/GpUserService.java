@@ -1,7 +1,11 @@
 package com.example.gimpo.gpUser;
 
+import java.util.Optional;
+
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import com.example.gimpo.DataNotFoundException;
 
 import lombok.RequiredArgsConstructor;
 
@@ -23,6 +27,16 @@ public class GpUserService {
 		this.gpUserRepository.save(user);
 		
 		return user;
+	}
+	
+	public GpUser getUser(String username) {
+		Optional<GpUser> gpUser = this.gpUserRepository.findByUsername(username);
+		
+		if(gpUser.isPresent()) {
+			return gpUser.get();
+		}else {
+			throw new DataNotFoundException("gpUser not found");
+		}
 	}
 	
 
