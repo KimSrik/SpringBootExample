@@ -2,6 +2,8 @@
 	<div class="container-fluid">
 		<a class="navbar-brand" href="/"><img src="/img/Gimpo_Logo.png"></a>
 		
+		<span sec:authorize="isAuthenticated()"> 테스터님 환영합니다. &nbsp;&nbsp;</span>
+		
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 		data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
 		aria-expanded="false" aria-label="Toggle navigation">
