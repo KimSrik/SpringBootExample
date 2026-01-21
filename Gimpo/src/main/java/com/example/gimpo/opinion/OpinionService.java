@@ -51,4 +51,9 @@ public class OpinionService {
 		this.opinionRepository.save(opinion);
 		
 	}
+	
+	// 의견 삭제하기
+	public void delete(Opinion opinion) {
+		this.opinionRepository.delete(opinion);
+	}
 }

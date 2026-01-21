@@ -98,6 +98,26 @@ public class OpinionController {
 		
 	}
 	
+	// 의견 삭제하기
+	@PreAuthorize("isAuthenticated()")
+	@GetMapping("/delete/{id}")
+	public String opinionDelete(Principal principal, @PathVariable("id") Integer id) {
+		Opinion opinion = this.opinionService.getOpinion(id);
+		
+		if(!opinion.getWritter().getUsername().equals(principal.getName())) {
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "삭제 권한이 없습니다.");
+		}
+		
+		Notice notice = opinion.getNotice();
+		
+		Integer noticeId = notice.getId();
+		
+		this.opinionService.delete(opinion);
+		
+		return String.format("redirect:/notice/detail/%s", noticeId);
+		
+	}
+	
 	
 	
 	
