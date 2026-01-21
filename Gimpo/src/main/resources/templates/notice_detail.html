@@ -83,19 +83,21 @@
 						<span th:text="${ #temporals.format(notice.modifyDate, 'yyyy-MM-dd HH:mm:ss') }"></span>
 					</div>
 					
-					<div>지금 보고계시는 화면의 정보와 사용편의성에 만족하십니까?</div>
-					<div>
+					<hr>
+					
+					<div class="my-3">지금 보고계시는 화면의 정보와 사용편의성에 만족하십니까?</div>
+					<div class="my-3">
 						<span>
 							<input type="radio" name="rating" value="5"/> 매우 만족 &nbsp;  
-							<input type="radio" name="rating" value="5"/> 만족 &nbsp;
-							<input type="radio" name="rating" value="5"/> 보통 &nbsp;
-							<input type="radio" name="rating" value="5"/> 불만족 &nbsp;
-							<input type="radio" name="rating" value="5"/> 매우 불만족 &nbsp;
+							<input type="radio" name="rating" value="4"/> 만족 &nbsp;
+							<input type="radio" name="rating" value="3"/> 보통 &nbsp;
+							<input type="radio" name="rating" value="2"/> 불만족 &nbsp;
+							<input type="radio" name="rating" value="1"/> 매우 불만족 &nbsp;
 						</span>
 					</div>
-					<div>
-						<input type="text" name="oContent" id="oContent" placeholder="100자 이내로 적어주세요.">
-						<button>의견 남기기</button>
+					<div class="d-flex">
+						<input class="form-control" type="text" name="oContent" id="oContent" placeholder="100자 이내로 적어주세요."/>
+						<button class="justify-content-end btn btn-primary" style="width:140px;">의견 남기기</button>
 					</div>
 				</div>
 			</div>
