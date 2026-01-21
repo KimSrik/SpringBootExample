@@ -26,7 +26,11 @@
 								<span th:text="${notice.title}"></span>
 							</a>
 						</td>
-						<td th:text="${notice.writter.username}"></td>
+						
+						<td>
+							<span th:if="${notice.writter != null}"
+								th:text="${notice.writter.username}"></span>
+						</td>
 						<td th:text="${notice.views}"></td>
 						<td th:text="${ #temporals.format(notice.createDate, 'yyyy-MM-dd HH:mm:ss') }"></td>			
 					</tr>

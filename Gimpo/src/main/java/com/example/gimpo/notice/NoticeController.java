@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.server.ResponseStatusException;
 import com.example.gimpo.gpUser.GpUser;
 import com.example.gimpo.gpUser.GpUserService;
+import com.example.gimpo.opinion.OpinionForm;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -52,7 +53,7 @@ public class NoticeController {
 	
 	// 공지 상세 보기
 	@GetMapping("/detail/{id}")
-	public String noticeDetail(Model model, @PathVariable("id") Integer id) {
+	public String noticeDetail(Model model, @PathVariable("id") Integer id, OpinionForm opinionForm) {
 		Notice notice = this.noticeService.getNotice(id);
 		model.addAttribute("notice", notice);
 		return "notice_detail";

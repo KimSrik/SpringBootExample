@@ -17,14 +17,16 @@ class GimpoApplicationTests {
 
 	@Test
 	void contextLoads() {
+		
 		/*
 		// 테스트용 30개 데이터 삽입
-		for(int i=1; i<=30; i++) {
+		for(int i=1; i<=150; i++) {
 			String title = String.format("테스트 데이터 : [%02d]", i);
 			String content = String.format("테스트 데이터 : [%02d]-[%02d]\n[%02d]-[%02d]", i, i, i, i);
 			this.noticeService.create(title, content, null);
 		}
 		*/
+		
 	}
 
 }
