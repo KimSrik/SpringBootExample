@@ -108,17 +108,17 @@
 				</div>
 			</div>
 			
-			<div class="card my-3">		
+			<div class="card my-3" th:if="${#lists.size(notice.opinionList) >= 1}">		
 				<div class="card-body">	
 					<div th:each=" opinion, loop : ${notice.opinionList} " class="py-3">
 							<div class="py-2">
 								<span>만족도</span>
-								<span >
-										<input type="radio" th:name="${loop.count}" value="5" th:checked="${opinion.rating == 5}" disabled /> 매우 만족 &nbsp;  
-										<input type="radio" th:name="${loop.count}" value="4" th:checked="${opinion.rating == 4}" disabled /> 만족 &nbsp;
-										<input type="radio" th:name="${loop.count}" value="3" th:checked="${opinion.rating == 3}" disabled /> 보통 &nbsp;
-										<input type="radio" th:name="${loop.count}" value="2" th:checked="${opinion.rating == 2}" disabled /> 불만족 &nbsp;
-										<input type="radio" th:name="${loop.count}" value="1" th:checked="${opinion.rating == 1}" disabled /> 매우 불만족 &nbsp;
+								<span>
+									<span th:if="${opinion.rating == 5}">매우 만족</span>
+									<span th:if="${opinion.rating == 4}">만족</span>
+									<span th:if="${opinion.rating == 3}">보통</span>
+									<span th:if="${opinion.rating == 2}">불만족</span>
+									<span th:if="${opinion.rating == 1}">매우 불만족</span>
 								</span>
 							</div>
 							

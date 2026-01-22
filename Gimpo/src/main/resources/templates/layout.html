@@ -7,6 +7,9 @@
 <!-- bootstrap.css added -->
 <link rel="stylesheet" type="text/css" th:href="@{/bootstrap.min.css}">
 
+<!-- custom style.css added -->
+<link rel="stylesheet" type="text/css" th:href="@{/style.css}">
+
 	<!-- copy page notication -->
 	<div>
 		<img src="/img/header_flag.png">
@@ -16,15 +19,12 @@
 
 </head>
 <body>
-	
-	
-
 	<!-- navbar added -->
 	<div th:replace="~{navbar::navbarFragment}"></div>
 
 	<!-- main layout added -->
 	<th:block layout:fragment="content"></th:block>
-
+	
 	<!-- bootstrap JS added -->
 	<script th:src="@{/bootstrap.min.js}"></script>
 	
@@ -32,4 +32,6 @@
 	<th:block layout:fragment="script"></th:block>
 
 </body>
+	<!-- footer added -->
+	<div th:replace="~{footer::footerFragment}"></div>
 </html>
