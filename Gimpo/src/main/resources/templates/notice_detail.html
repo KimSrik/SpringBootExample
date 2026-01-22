@@ -112,7 +112,7 @@
 				<div class="card-body">	
 					<div th:each=" opinion, loop : ${notice.opinionList} " class="py-3">
 							<div class="py-2">
-								<span>만족도</span>
+								<span>만족도 : </span>
 								<span>
 									<span th:if="${opinion.rating == 5}">매우 만족</span>
 									<span th:if="${opinion.rating == 4}">만족</span>

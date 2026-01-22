@@ -73,4 +73,10 @@ public class NoticeService {
 	public void delete(Notice notice) {
 		this.noticeRepository.delete(notice);
 	}
+	
+	// 공지 글 조회수 증가
+	public void viewsPlus(Notice notice) {
+		notice.setViews(notice.getViews() + 1);
+		this.noticeRepository.save(notice);
+	}
 }

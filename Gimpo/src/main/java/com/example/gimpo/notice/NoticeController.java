@@ -56,6 +56,8 @@ public class NoticeController {
 	public String noticeDetail(Model model, @PathVariable("id") Integer id, OpinionForm opinionForm) {
 		Notice notice = this.noticeService.getNotice(id);
 		model.addAttribute("notice", notice);
+		// 조회수 ++
+		this.noticeService.viewsPlus(notice);
 		return "notice_detail";
 	}
 	
