@@ -78,12 +78,12 @@
 					<hr>
 					
 					<div>
-						<span>작성자</span>
+						<span class="fw-bold">작성자 : </span>
 						<span>
 							<span th:if="${notice.writter != null}" th:text="${notice.writter.username}"></span>
 						</span>
 						
-						<span>&nbsp;&nbsp;&nbsp; 최종수정일</span>
+						<span class="fw-bold">&nbsp;&nbsp;&nbsp; 최종수정일 : </span>
 						<span th:text="${ #temporals.format(notice.modifyDate, 'yyyy-MM-dd HH:mm:ss') }"></span>
 					</div>
 					
